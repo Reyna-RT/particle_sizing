@@ -1,5 +1,5 @@
 # particle_sizing
-Particle Sizing Method to accompany OpenPTV software
+Particle Sizing Method to accompany OpenPTV software presented in  [[1]](#1).
 
 This repository contains: 
 
@@ -21,8 +21,14 @@ The data folder can be handled as a standard OpenPTV data folder, with the only 
 
 ## How to use the data
 
-First the "sizing_calibartion.py" should be used to obtain the parameters for corrections as presented in the paper.
+First the "sizing_calibartion.py" should be used to obtain the parameters for corrections as presented in the paper[[1]](#1).
 
 The notebooks contain the information necessary to plot the results after obtaining parameters with "sizing_calibartion.py". "G2_array_results.ipynb" contains an example on how to use the utils functions to estimate sizes on static particles. "Droplets_results.ipynb" contains an example on how to use the utils functions to estimate sizes on a time series.
 
 A new magnification adjustment can be made through the file "sizing_calibartion.py", where the magnification is calculated by the use of the images for multiple plane calibration, the polinomial parameters are save in a txt file and used in the notebooks.
+
+## References
+<a id="1">[1]</a> 
+Ramirez de la Torre, R. G., and Atle Jensen. 
+"A method to estimate the size of particles using the open source software OpenPTV." 
+arXiv e-prints (2022): arXiv-2203.
