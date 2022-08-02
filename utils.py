@@ -3,7 +3,7 @@
 """
 Created on Fri May 27 20:24 2022
 
-@author: reynar
+@author: RG Ramirez de la Torre, University of Oslo
 """
 
 from skimage import io
@@ -15,6 +15,11 @@ from scipy.spatial.distance import cdist
 
 # Function to find distance to nearest neighbor in the mesh
 def scipy_method(data):
+    """
+    This function finds the distance between points in an array
+    :param data: an array of x and y coordinates of points
+    :return: an array with the distances between consecutive points
+    """
     # Distance between the array and itself
     dists = cdist(data, data)
     # Sort by distances
@@ -25,13 +30,17 @@ def scipy_method(data):
     return nn_dist
 
 
-# Function to define fit
-def func(x, a, b, c):
-    return a / (b - c * x)
-
-
 # Function to obtain distance between holes in planes
 def obtain_distance_from_images(name, plot_example=False):
+    """
+    This functions calculates the distance between dots for an image, the image has to
+    have a dotted pattern and the distance between wholes is 10 mm. If other distance should
+    be used, the code needs modifications
+    :param name: string with the name of the tiff image file
+    :param plot_example: if True it creates a plot with an example of the image and the dots found.
+                        default id False
+    :return: an array with 3 components: mean distance between dots, standard deviation and error
+    """
     scales = np.zeros((3))
     cal_image = io.imread(name)
     ## skimage below 0.19.2
@@ -128,7 +137,7 @@ def magnification(name):
 def resize(x, size, name='data/intensity_2022.txt'):
     pols = np.loadtxt(name)
     if size < 4.8:
-        P = np.poly1d(pols[0])
+        P = np.poly1d(pols[1])
     else:
         P = np.poly1d(pols[1])
     return P(x)
