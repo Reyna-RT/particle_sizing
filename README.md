@@ -30,5 +30,6 @@ A new magnification adjustment can be made through the file "sizing_calibartion.
 ## References
 <a id="1">[1]</a> 
 Ramirez de la Torre, R. G., and Atle Jensen. 
-"A method to estimate the size of particles using the open source software OpenPTV." 
-arXiv e-prints (2022): arXiv-2203.
+"Sizing of particles and droplets using 3D-PTV, an OpenPTV post-processing tool." 
+Measurement Science and Technology (2023).
+https://doi.org/10.1088/1361-6501/acc11d.
